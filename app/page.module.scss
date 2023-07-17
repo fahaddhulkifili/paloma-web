@@ -1,10 +1,8 @@
 @import "./colors.scss";
 .main {
   display: flex;
-  // flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  // padding: 6rem;
   background-image: url("../assets/images/home_cover.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -12,18 +10,70 @@
   min-height: 100vh;
   height: 100vh;
 }
+.primaryLogoWrapper {
+  margin-left: 15px;
+  @media (max-width: 992px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
 .primaryLogo {
-  max-height: 100vh;
+  max-height: 95vh;
+  @media (max-width: 992px) {
+    max-height: 100px;
+    transform: rotate(90deg);
+    transform-origin: 40% 3%;
+  }
 }
 .mainMenuNavigation {
+  transform: rotate(270deg);
+  transform-origin: 47% 81%;
+  margin: 0;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
   ul {
     li {
       list-style-type: none;
+      position: relative;
       a {
         font-size: 60px;
+        line-height: 1.2;
         color: $primary-text-color;
+        opacity: 0.7;
         text-transform: uppercase;
+        &::before {
+          background-color: #fff;
+          transition: 0.3s ease-out;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          height: 100%;
+          width: 0%;
+          position: absolute;
+          content: "";
+          z-index: -1;
+        }
+        &:hover {
+          opacity: 1;
+          color: #000;
+          &::before {
+            width: 100%;
+          }
+        }
       }
     }
+  }
+  @media (max-width: 992px) {
+    transform: rotate(0deg);
+    transform-origin: 47% 81%;
+    text-align: right;
+    ul li a {
+      font-size: 35px;
+    }
+  }
+  @media (max-width: 481px) {
+    top: 70px;
   }
 }

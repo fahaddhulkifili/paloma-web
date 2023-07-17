@@ -4,7 +4,7 @@ import primaryLogo from "../assets/icons/paloma_logo_primary.svg";
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div>
+      <div className={styles.primaryLogoWrapper}>
         <Image
           src={primaryLogo}
           alt="paloma logo"
